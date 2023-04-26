@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    不能放在上面：组件思想-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!--    <script>-->
+
+    <!--        const Root = {-->
+    <!--            data() {-->
+    <!--                return {-->
+    <!--                    count: 0-->
+    <!--                }-->
+    <!--            },-->
+
+    <!--            template:-->
+    <!--                "<button @click='count++'>click</button> - click {{count}} time"-->
+    <!--        }-->
+
+    <!--        Vue.createApp(Root).mount("#app")-->
+
+    <!--    </script>-->
+
+</head>
+
+<body>
+<div id="app">
+
+    <p>哈哈哈哈，我是app中的内容！ </p>
+</div>
+<script>
+    const Root = {
+        data() {
+            return {
+                count: 0
+            }
+        },
+
+        template:
+            "<button @click='count++'>click</button> - click {{count}} time"
+    }
+
+    Vue.createApp(Root).mount("#app")
+
+</script>
+</body>
+</html>

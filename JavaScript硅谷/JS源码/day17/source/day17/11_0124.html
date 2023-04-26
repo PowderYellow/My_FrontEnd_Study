@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 520px;
+            height: 333px;
+            margin: 50px auto;
+            background-color: greenyellow;
+            padding: 10px 0;
+            /*why*/
+            position: relative;
+
+        }
+
+        #imglist {
+            list-style: none;
+            /*width: 2600px;*/
+            position: absolute;
+            left:-520px;
+        }
+
+        #imglist li {
+            float: left;
+            padding: 0 10px;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var imgList = document.getElementById("imglist");
+            var imgArr = document.getElementsByTagName("img");
+
+            imgList.style.width = 520 * imgArr.length + "px";
+
+        }
+    </script>
+</head>
+<body>
+
+<div id="outer">
+    <ul id="imglist">
+        <li>
+            <img src="img/1.jpg">
+        </li>
+        <li>
+            <img src="img/2.jpg">
+        </li>
+        <li>
+            <img src="img/3.jpg">
+        </li>
+        <li>
+            <img src="img/4.jpg">
+        </li>
+        <li>
+            <img src="img/5.jpg">
+        </li>
+
+        <li>
+            <img src="img/5.jpg">
+        </li>
+        <li>
+            <img src="img/5.jpg">
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

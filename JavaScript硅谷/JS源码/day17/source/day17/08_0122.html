@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+
+            btn01.onclick = function () {
+                move(box1, 800, 10);
+            }
+
+            btn02.onclick = function(){
+                move(box1 , 0 , 10);
+            };
+        };
+
+        var timer;
+
+        function move(obj, speed, target) {
+
+            clearInterval(timer);
+            var current=parseInt(getComputedStyle(obj, null)["left"]);
+            alert(current);
+
+            if(current>target){
+                speed=-speed;
+            }
+
+            timer = setInterval(function () {
+
+                var newValue = current + speed;
+
+                if ((speed < 0 && newValue < target) ||
+                    (speed > 0 && newValue > target))
+                {
+                    newValue = target;
+                }
+                obj.style.left = newValue + "px";
+                if (newValue === target) {
+                    clearInterval(timer);
+                }
+            }, 30);
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+<button id="btn01">点击按钮以后box1向右移动</button>
+<button id="btn02">点击按钮以后box1向左移动</button>
+
+<div id="box1"></div>
+
+<div style="width: 0;
+            height: 1000px;
+            border-left:1px black solid;
+            position: absolute;
+            left: 800px;
+            top:0;"></div>
+
+</body>
+</html>

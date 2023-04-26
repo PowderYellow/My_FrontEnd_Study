@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style/css.css" />
+    <script>
+        function myClick(idstr, fun) {
+            let btn = document.getElementById(idstr);
+            btn.onclick = fun;
+        }
+
+
+        window.onload = function () {
+            let btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                var bj = document.getElementById("bj");
+                alert(bj.innerHTML);
+            }
+
+            let btn02 = document.getElementById("btn02");
+            btn02.onclick = function () {
+                var lis = document.getElementsByTagName("li");
+                for (let i = 0; i < lis.length; i++) {
+                    const element = lis[i].innerHTML;
+                    alert(element);
+
+                }
+            }
+
+            let btn03 = document.getElementById("btn03");
+            btn03.onclick = function () {
+                let inputs = document.getElementsByName("gender");
+
+                for (let index = 0; index < inputs.length; index++) {
+                    const element = inputs[index].value;
+                    alert(element);
+                }
+            }
+
+            let btn04 = document.getElementById("btn04")
+            btn04.onclick = function () {
+                var city = document.getElementById("city");
+                var lis = city.getElementsByTagName("li");
+                for (let index = 0; index < lis.length; index++) {
+                    const element = lis[index].innerHTML;
+                    alert(element);
+                }
+            }
+
+
+            let btn05 = document.getElementById("btn05");
+            btn05.onclick = function () {
+                var city = document.getElementById("city");
+                var cns = city.childNodes;
+                // alert(cns.length);
+                // for (let index = 0; index < cns.length; index++) {
+                //     const element = cns[index];
+                // }
+                var cns2 = city.children;
+                for (let index = 0; index < cns2.length; index++) {
+                    const element = cns2[index].innerHTML;
+                    alert(element)
+                }
+            }
+
+
+            let btn06 = document.getElementById("btn06");
+            btn06.onclick = function () {
+                var phone = document.getElementById("phone");
+                var fir = phone.firstChild;
+                var fire = phone.firstElementChild;
+                alert(fire);
+            }
+
+            myClick("btn07", function () {
+                var bj = document.getElementById("bj");
+                var pn = bj.parentNode;
+                alert(pn.innerText);
+            })
+
+            myClick("btn08", function () {
+                var and = document.getElementById("android");
+                var ps = and.previousSibling;
+                var pe = and.previousElementSibling;
+                alert(pe.innerHTML);
+            });
+
+            myClick("btn09", function () {
+                var um = document.getElementById("username");
+                alert(um.value);
+            });
+
+            myClick("btn10", function () {
+                var um = document.getElementById("username");
+                um.value = "hehheheheheh";
+
+            });
+
+            myClick("btn11", function () {
+                var bj = document.getElementById("bj");
+                alert(bj.firstChild.nodeValue);
+
+            })
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <body>
+        <div id="total">
+            <div class="inner">
+                <p>
+                    你喜欢哪个城市?
+                </p>
+
+                <ul id="city">
+                    <li id="bj">北京</li>
+                    <li>上海</li>
+                    <li>东京</li>
+                    <li>首尔</li>
+                </ul>
+
+                <br>
+                <br>
+
+                <p>
+                    你喜欢哪款单机游戏?
+                </p>
+
+                <ul id="game">
+                    <li id="rl">红警</li>
+                    <li>实况</li>
+                    <li>极品飞车</li>
+                    <li>魔兽</li>
+                </ul>
+
+                <br />
+                <br />
+
+                <p>
+                    你手机的操作系统是?
+                </p>
+
+                <ul id="phone">
+                    <li>IOS</li>
+                    <li id="android">Android</li>
+                    <li>Windows Phone</li>
+                </ul>
+            </div>
+
+            <div class="inner">
+                gender:
+                <input class="hello" type="radio" name="gender" value="male" />
+                Male
+                <input class="hello" type="radio" name="gender" value="female" />
+                Female
+                <br>
+                <br>
+                name:
+                <input type="text" name="name" id="username" value="abcde" />
+            </div>
+
+        </div>
+        <div id="btnList">
+            <div><button id="btn01">查找#bj节点</button></div>
+            <div><button id="btn02">查找所有li节点</button></div>
+            <div><button id="btn03">查找name=gender的所有节点</button></div>
+            <div><button id="btn04">查找#city下所有li节点</button></div>
+            <div><button id="btn05">返回#city的所有子节点</button></div>
+            <div><button id="btn06">返回#phone的第一个子节点</button></div>
+            <div><button id="btn07">返回#bj的父节点</button></div>
+            <div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+            <div><button id="btn09">返回#username的value属性值</button></div>
+            <div><button id="btn10">设置#username的value属性值</button></div>
+            <div><button id="btn11">返回#bj的文本值</button></div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "1",
+  "version": "1",
+  "main": "1",
+  "license": "1",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "vite": "^4.2.1"
+  },
+  "description": "1",
+  "repository": "1",
+  "author": "1",
+  "private": true,
+  "dependencies": {
+    "vue": "^3.2.47"
+  },
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

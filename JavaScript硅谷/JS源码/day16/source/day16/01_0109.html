@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            background-color: #99ff99;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var u1 = document.getElementById("u1");
+            var btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function () {
+                var li = document.createElement("li");
+                li.innerHTML = "<a href='javascript:' class='link'> cha超链接</a>";
+                u1.appendChild(li);
+            }
+
+            // var allA = document.getElementsByTagName("a");
+            // for (let i = 0; i < allA.length; i++) {
+            //     allA[i].onclick = function () {
+            //         alert("i am click");
+            //     }
+            // }
+
+            u1.onclick = function (event) {
+                event = event || window.event;
+
+                if(event.target.className=="link"){
+                    alert("hellooo");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn01"> add</button>
+<ul id="u1">
+    <li><a href="javascript:" class="link"> cha超链接</a></li>
+    <li><a href="javascript:" class="link"> cha超链接2</a></li>
+    <li><a href="javascript:" class="link"> cha超链接3</a></li>
+
+</ul>
+</body>
+</html>

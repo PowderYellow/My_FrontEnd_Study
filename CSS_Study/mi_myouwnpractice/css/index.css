@@ -1,0 +1,129 @@
+/*单独的*/
+
+
+.topbar_wrapper {
+    background-color: #333;
+}
+
+.topbar {
+    width: 1226px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.topbar li {
+    float: left;
+}
+
+.topbar a {
+    font-size: 12px;
+    color: #b0b0b0;
+    display: block;
+}
+
+.topbar .line {
+    font-size: 12px;
+    margin: 0 8px;
+    color: #424242;
+}
+
+.topbar a:hover {
+    color: white;
+
+}
+
+/*-------------------------------------------------*/
+.service {
+    float: left;
+
+}
+
+.service .app {
+    position: relative;
+}
+
+li:hover > .app::after {
+    /*设置位置*/
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    /*内容*/
+    line-height: 1;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: white;
+}
+
+li:hover > .app .qrcode {
+    display: block;
+}
+
+.app .qrcode {
+    display: none;
+
+    width: 124px;
+    height: 148px;
+    line-height: 1;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 30px rgb(0, 0, 0, 3);
+
+    /*确定qrcode的位置*/
+    position: absolute;
+    left: -40px;
+    top: 40px;
+}
+
+/*显示
+Q:为啥他用 li 带入
+父> 子{
+        } 看不懂*/
+
+
+.qrcode img {
+    width: 90px;
+    margin: 17px 17px 5px 17px;
+}
+
+.qrcode span {
+
+    font-size: 14px;
+    color: black;
+}
+
+/*-------------------------------------------------*/
+.user-info, .shopping-cart {
+    float: right;
+}
+
+/*-------------------------------------------------*/
+
+.shopping-cart {
+    margin-left: 26px;
+
+
+}
+
+.shopping-cart a {
+    float: right;
+    width: 120px;
+    text-align: center;
+    background-color: #424242;
+}
+
+.shopping-cart i {
+    margin-right: 3px;
+}
+
+.shopping-cart a:hover {
+    background-color: white;
+    color: orange;
+}
+
+

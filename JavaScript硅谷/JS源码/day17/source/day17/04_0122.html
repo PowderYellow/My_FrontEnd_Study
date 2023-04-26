@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            var count = document.getElementById("count");
+
+            var num = 1;
+
+            var res=setInterval(function () {
+                count.innerHTML = num++;
+            }, 500);
+
+        }
+    </script>
+
+</head>
+
+<body>
+<h1 id="count">1</h1>
+</body>
+
+</html>

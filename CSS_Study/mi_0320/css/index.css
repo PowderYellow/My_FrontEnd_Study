@@ -1,0 +1,400 @@
+/*index.html中的样式表，独有*/
+
+/*-------------------------------------------------*/
+/*topbar*/
+
+.topbar-wrapper {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+}
+
+.topbar {
+}
+
+.service, .topbar-wrapper li {
+    float: left;
+}
+
+
+.topbar a {
+    font-size: 12px;
+    color: #b0b0b0;
+    /*不移入文字也能显示*/
+    display: block;
+
+}
+
+.topbar .line {
+    font-size: 12px;
+    color: #424242;
+    margin: 0 8px;
+}
+
+.topbar a:hover {
+    color: white;
+}
+
+/*因为有小三角需要父元素定位*/
+.app {
+    position: relative;
+}
+
+
+/*设置小三角*/
+li:hover > .app::after {
+    content: "";
+    /*设置绝对定位，自动block块元素*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    line-height: 1;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: white;
+
+}
+
+
+li:hover > .app .qrcode {
+    /*display: block;*/
+    height: 148px;
+
+}
+
+.app .qrcode {
+
+    /*display: none;*/
+    height: 0;
+    overflow: hidden;
+    /*过渡效果,搭height:0px*/
+    transition: height 3s;
+
+    position: absolute;
+    left: -40px;
+    z-index: 3;
+
+    width: 124px;
+    /*height: 148px;*/
+    /*继承上面的li,line-height为40px居中，所以需要重新设置*/
+    line-height: 1;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 3);
+
+
+}
+
+/*设置二维码图片*/
+.app .qrcode img {
+    width: 90px;
+    margin: 17px 17px 5px 17px;
+}
+
+/*设置二维码文字*/
+.app .qrcode span {
+    font-size: 14px;
+    color: black;
+}
+
+/*------------------------------------------------*/
+
+.shop-cart, .user-info {
+    float: right;
+}
+
+.shop-cart {
+    margin-left: 26px;
+}
+
+.shop-cart a {
+    display: block;
+    float: right;
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+}
+
+.shop-cart i {
+    margin-right: 3px;
+}
+
+/*因为要移入展示层后继续显示*/
+.shop-cart:hover a {
+    background-color: white;
+    color: orange;
+}
+
+/*-----------------------------------------------*/
+/*headbar*/
+
+.header {
+    height: 100px;
+    /*background-color: #ffff00;*/
+
+
+}
+
+.header .logo {
+    float: left;
+    margin-top: 22px;
+
+    width: 55px;
+    height: 55px;
+    /*开启定位*/
+    position: relative;
+
+    /*左边那个消失*/
+    overflow: hidden;
+    /*LOGO文字消失*/
+    text-indent: -9999px;
+}
+
+
+.header .logo a {
+    position: absolute;
+    /*transition必须从一个确定值移动到另一个值*/
+    left: 0;
+    width: 55px;
+    height: 55px;
+    background-color: #FF6700;
+    background-image: url("../img/mi-logo.png");
+    /*图片居中*/
+    background-position: center;
+
+
+}
+
+.header .logo .home {
+    background-image: url("../img/mi-home.png");
+    left: -55px;
+}
+
+/*如何实现移动小房子的动画效果：*/
+/*左边放一个，然后向右边移动*/
+
+.header .logo:hover .mi {
+    left: 55px;
+
+    /*transition必须从一个确定值移动到另一个值*/
+    transition: left 0.3s;
+}
+
+.header .logo .home {
+    left: 0px;
+}
+
+/*----------------------------------------------------------------*/
+/*中间导航条*/
+.header-wrapper {
+    position: relative;
+}
+
+.header .nav-wrapper {
+
+    float: left;
+    margin-left: 7px;
+}
+
+.header .nav {
+    /*位置*/
+
+    width: 792px; /* 850 -58 */
+    height: 100px;
+    line-height: 100px;
+    /*background-color: #bfa;*/
+    padding-left: 58px;
+}
+
+
+.nav > li {
+    float: left;
+}
+
+
+/*左侧导航条*/
+
+.all-goods-wrapper {
+    position: relative;
+
+}
+
+.left-menu {
+
+    width: 234px;
+    height: 440px;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, .6);
+    /*位置*/
+    position: absolute;
+    z-index: 999;
+    left: -120px;
+    line-height: 1;
+}
+
+/*有优先级*/
+ul .left-menu li a {
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 30px;
+    font-size: 14px;
+    color: white;
+}
+
+ul .left-menu li a:hover {
+
+    color: white;
+    background-color: #ff6700;
+}
+
+.left-menu a i {
+    float: right;
+    line-height: 42px;
+}
+
+.nav li a {
+    font-size: 16px;
+    color: black;
+    margin-right: 20px;
+    display: block;
+}
+
+.nav li a:hover {
+    color: #ff6700;
+}
+
+.all-goods {
+    /*不能用display:hidden:因为真的就隐藏了*/
+    visibility: hidden;
+}
+
+
+.goods-info {
+    /*确定位置，*/
+
+    /*显示动画效果*/
+    height: 0;
+    overflow: hidden;
+    /*由包含块确定,由相对父元素确定*/
+    width: 100%;
+    background-color: #fff;
+    /*位置*/
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 9999;
+}
+
+.nav .show-goods:hover ~ .goods-info,
+.goods-info:hover {
+    /*动画*/
+    height: 228px;
+    transition: height 0.3s;
+
+    /*外样式*/
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .2);
+}
+
+/*--------------------------------------------------------------*/
+/*搜索框*/
+
+.search-wrapper {
+    width: 296px;
+    height: 50px;
+    /*background-color: red;*/
+    float: right;
+    margin-top: 25px;
+
+
+}
+
+/*左边*/
+.search-wrapper .search-inp {
+
+    box-sizing: border-box;
+    height: 50px;
+    width: 244px;
+    float: left;
+    /*默认边框去除*/
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    outline: none;
+}
+
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button {
+    border-color: #FF6700;
+}
+
+/*右边*/
+.search-wrapper .search-btn {
+    float: left;
+    /*默认样式去除*/
+    padding: 0;
+
+    /*位置*/
+    height: 50px;
+    width: 52px;
+
+    /*样式*/
+    color: #616161;
+    background-color: #fff;
+    font-size: 16px;
+
+    border: solid 1px rgb(224, 224, 224);
+    border-left: none;
+}
+
+.search-wrapper .search-btn:hover {
+    border: none;
+    background-color: #FF6700;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+.banner {
+    position: relative;
+    height: 460px;
+}
+
+.banner .img-list li {
+    position: absolute;
+
+}
+
+.banner img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.pointer {
+    position: absolute;
+    bottom: 22px;
+    right: 35px;
+}
+
+.pointer a {
+    float: left;
+    width: 6px;
+    height: 6px;
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .4);
+    margin-left: 6px;
+
+}
+.pointer a:hover,
+.pointer a.active{
+    border-color: rgba(0, 0, 0, .4);
+    background-color:rgba(255, 255, 255, .4);
+}
+

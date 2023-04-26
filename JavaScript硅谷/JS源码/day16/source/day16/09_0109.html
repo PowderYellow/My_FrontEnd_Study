@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            document.onkeydown = function (e) {
+                if (e.keyCode === 89 && e.ctrlKey) {
+                    console.log("ctrl和y都被按下了");
+                }
+            }
+            document.onkeyup = function () {
+                console.log("up");
+            }
+
+
+            var input = document.getElementsByTagName("input")[0];
+
+            input.onkeydown = function (e) {
+                console.log(e.key)
+                // return false;
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<input type="text"/>
+</body>
+</html>
